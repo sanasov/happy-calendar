@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context>
+
+    <Parameter name="schema.member_dashboard" value="member_dashboard" override="false"/>
+
+    <Resource name="jdbc/member_dashboard" auth="Container"
+              type="javax.sql.DataSource"
+              validationQuery="select 1 from DUAL"
+              maxTotal="100" maxIdle="30" maxWaitMillis="15000"
+              username="root" password="$Qwerty123" driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/member_dashboard?useUnicode=true&amp;characterEncoding=utf8&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;nullNamePatternMatchesAll=true"/>
+
+</Context>

@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.igrey.dev</groupId>
+    <groupId>ru.ru.igrey.dev</groupId>
     <artifactId>happy-calendar</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
@@ -38,7 +38,7 @@
                 <version>3.7</version>
                 <configuration>
                     <rulesets>
-                        <ruleset>igrey/pmd-ruleset.xml</ruleset>
+                        <ruleset>pmd-ruleset.xml</ruleset>
                     </rulesets>
                     <printFailingErrors>true</printFailingErrors>
                 </configuration>
@@ -51,7 +51,7 @@
                 </executions>
                 <dependencies>
                     <dependency>
-                        <groupId>ru.atc.nspkmoas</groupId>
+                        <groupId>ru.igrey.dev</groupId>
                         <artifactId>pmd</artifactId>
                         <version>1.0</version>
                     </dependency>

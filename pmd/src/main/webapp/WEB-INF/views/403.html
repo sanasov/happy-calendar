@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" ng-app="App"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>МОАС | Авторизация</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" th:href="@{/resources/favicon.ico}"/>
+
+    <script th:src="@{/resources/app/commons.js} + '?cache=' + ${@applicationInfo.getGitRevision()}"></script>
+    <script th:src="@{/resources/app/bundle.js} + '?cache=' + ${@applicationInfo.getGitRevision()}"></script>
+    <base th:href="@{/}"/>
+</head>
+<body ng-controller="AccessDenyCtrl">
+</body>
+</html>

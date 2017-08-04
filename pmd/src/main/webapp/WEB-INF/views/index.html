@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" ng-app="App"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title ng-bind="title"></title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="app.version" th:content="${@applicationInfo.getAppVersion()}"/>
+    <meta name="git.revision" th:content="${@applicationInfo.getGitRevision()}"/>
+
+    <th:block th:if="${@commonPropertyConfig.isCsrfActive()}">
+        <meta name="_csrf_token" th:content="${_csrf.token}"/>
+        <meta name="_csrf_header_name" th:content="${_csrf.headerName}"/>
+        <meta name="_csrf_parameter_name" th:content="${_csrf.parameterName}"/>
+    </th:block>
+
+    <link rel="shortcut icon" th:href="@{/favicon.ico}"/>
+    <link rel="stylesheet" th:href="@{/app/bundle.css} + '?cache=' + ${@applicationInfo.getGitRevision()}"/>
+
+    <script th:src="@{/app/commons.js} + '?cache=' + ${@applicationInfo.getGitRevision()}"></script>
+    <script th:src="@{/app/bundle.js} + '?cache=' + ${@applicationInfo.getGitRevision()}"></script>
+    <base th:href="@{/}"/>
+</head>
+<body ng-controller="AppCtrl" ng-class="isIe() ? 'ie' : ''">
+<div class="height-100percents" ng-include="'index-page.tpl.html'"></div>
+</body>
+</html>
