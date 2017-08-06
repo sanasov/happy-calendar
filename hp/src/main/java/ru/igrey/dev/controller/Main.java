@@ -14,20 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class Main {
 
     private Logger logger = LoggerFactory.getLogger(Main.class);
-//    @PreAuthorize("isFullyAuthenticated() and hasAnyRole('ROLE_MODER_NSPK', 'ROLE_MEMBERS_MODER', 'ROLE_MEMBERS_USER')")
     @RequestMapping(value = "/")
     public String home() {
         logger.info("INDEX HELLO");
         return "index";
-    }
-
-    @RequestMapping("/login")
-    public String login() {
-        return "login";
-    }
-
-    @RequestMapping("/403")
-    public String accessDeny() {
-        return "403";
     }
 }
