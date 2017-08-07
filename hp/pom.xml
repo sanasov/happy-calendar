@@ -420,7 +420,7 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <url>http://localhost:8080/manager/text</url>
+                            <url>http://localhost:8081/manager/text</url>
                             <server>TomcatServer</server>
                             <path>/hp</path>
                         </configuration>

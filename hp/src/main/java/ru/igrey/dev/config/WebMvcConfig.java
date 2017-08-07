@@ -1,12 +1,14 @@
 package ru.igrey.dev.config;
 
 import org.springframework.context.MessageSource;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
@@ -24,15 +26,12 @@ import static org.springframework.context.annotation.ComponentScan.Filter;
  * Класс для инициализации Spring MVC
  */
 @Configuration
-@EnableWebMvc
 @PropertySource("classpath:application.properties")
 @ComponentScan(basePackages = {"ru.igrey.dev.controller"}, includeFilters = @Filter(Controller.class), useDefaultFilters = false)
 
 class WebMvcConfig extends WebMvcConfigurationSupport {
     private static final String MESSAGE_SOURCE = "/WEB-INF/i18n/messages";
     private static final String VIEWS = "/WEB-INF/views/";
-    private static final String RESOURCES_LOCATION = "/resources/";
-    private static final String RESOURCES_HANDLER = "**";
 
     static {
         TimeZone.setDefault(TimeZone.getTimeZone("Asia/Baghdad"));
@@ -88,7 +87,7 @@ class WebMvcConfig extends WebMvcConfigurationSupport {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler(RESOURCES_HANDLER).addResourceLocations(RESOURCES_LOCATION);
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
     }
 
     @Override
