@@ -1,13 +1,8 @@
 export default class HpCtrl {
 
-    constructor($scope, $http, servlet, toastr, $timeout, $interval) {
+    constructor($scope) {
         angular.extend($scope, {
             ctrl: this,
-            $timeout,
-            toastr,
-            $http,
-            servlet,
-            $interval
         });
         this.$scope = $scope;
         $scope.firstName = "John";
@@ -18,10 +13,5 @@ export default class HpCtrl {
 }
 
 HpCtrl.$inject = [
-    '$scope',
-    '$http',
-    'servlet',
-    'toastr',
-    '$timeout',
-    '$interval'
+    '$scope'
 ];
