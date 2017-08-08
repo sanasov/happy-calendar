@@ -6,7 +6,7 @@
 
     <name>db</name>
 
-    <groupId>ru.ru.igrey.dev</groupId>
+    <groupId>ru.igrey.dev</groupId>
     <artifactId>db</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>

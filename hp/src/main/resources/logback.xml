@@ -23,7 +23,7 @@
         <appender-ref ref="STDOUT"/>
     </root>
 
-    <logger name="ru.ru.igrey.dev" level="DEBUG" additivity="false">
+    <logger name="ru.igrey.dev" level="DEBUG" additivity="false">
         <appender-ref ref="FILE"/>
     </logger>
 </configuration>

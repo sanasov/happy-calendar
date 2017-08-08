@@ -10,7 +10,7 @@
     <description>PMD - делает различные проверки по качеству кода. Если качество так себе - роняет сборку</description>
 
     <parent>
-        <groupId>ru.ru.igrey.dev</groupId>
+        <groupId>ru.igrey.dev</groupId>
         <artifactId>happy-calendar</artifactId>
         <version>1.0</version>
     </parent>
