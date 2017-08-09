@@ -234,13 +234,6 @@
             <artifactId>ehcache</artifactId>
             <version>2.9.0</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.github.eirslett</groupId>
-            <artifactId>yarn</artifactId>
-            <version>0.23.0</version>
-            <type>tar.gz</type>
-        </dependency>
     </dependencies>
 
     <build>
@@ -276,89 +269,6 @@
     </build>
 
     <profiles>
-        <profile>
-            <id>build_frontend</id>
-            <build>
-                <plugins>
-                    <!--<plugin>-->
-                        <!--<artifactId>maven-clean-plugin</artifactId>-->
-                        <!--<version>3.0.0</version>-->
-                        <!--<configuration>-->
-                            <!--<filesets>-->
-                                <!--<fileset>-->
-                                    <!--<directory>${basedir}/src/main/webapp/resources/</directory>-->
-                                    <!--<followSymlinks>false</followSymlinks>-->
-                                <!--</fileset>-->
-                                <!--<fileset>-->
-                                    <!--<directory>${basedir}/node_modules</directory>-->
-                                    <!--<followSymlinks>false</followSymlinks>-->
-                                <!--</fileset>-->
-                            <!--</filesets>-->
-                        <!--</configuration>-->
-                    <!--</plugin>-->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-dependency-plugin</artifactId>
-                        <version>3.0.0</version>
-                        <executions>
-                            <execution>
-                                <id>unpack</id>
-                                <phase>validate</phase>
-                                <goals>
-                                    <goal>unpack</goal>
-                                </goals>
-                                <configuration>
-                                    <artifactItems>
-                                        <artifactItem>
-                                            <groupId>com.github.eirslett</groupId>
-                                            <artifactId>node_modules</artifactId>
-                                            <version>1.0</version>
-                                            <type>tar.gz</type>
-                                            <overWrite>false</overWrite>
-                                            <outputDirectory>${pom.basedir}/node_modules</outputDirectory>
-                                        </artifactItem>
-                                    </artifactItems>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>com.github.eirslett</groupId>
-                        <artifactId>frontend-maven-plugin</artifactId>
-                        <version>1.3</version>
-
-                        <configuration>
-                            <installDirectory>.mvn</installDirectory>
-                            <nodeVersion>v7.3.0</nodeVersion>
-                            <yarnVersion>v0.23.0</yarnVersion>
-                        </configuration>
-
-                        <executions>
-                            <execution>
-                                <id>Install Node and yarn</id>
-                                <goals>
-                                    <goal>install-node-and-yarn</goal>
-                                    <goal>yarn</goal>
-                                </goals>
-                            </execution>
-                            <execution>
-                                <id>webpack build</id>
-                                <goals>
-                                    <goal>webpack</goal>
-                                </goals>
-                                <phase>generate-resources</phase>
-                                <configuration>
-                                    <environmentVariables>
-                                        <NODE_ENV>production</NODE_ENV>
-                                    </environmentVariables>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
         <profile>
             <id>local_deploy</id>
             <build>

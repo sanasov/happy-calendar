@@ -1,4 +1,5 @@
 
+import angular from "angular";
 import HpCtrl from "./controller/HpCtrl.js";
 
 const app = angular.module('App', [])
