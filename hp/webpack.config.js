@@ -31,18 +31,25 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/app/'
     },
-    // module: {
-    //     rules: [{
-    //         test: /\.js$/,
-    //         loader: 'babel-loader',
-    //         include: [
-    //             // Your app
-    //             path.join(__dirname, SRC_DIR),
-    //             // Modules with `module` field or `engines.node > 0.10`
-    //             path.join(__dirname, NODE_MODULE_ROOT)
-    //         ]
-    //     }]
-    // },
+    module: {
+        loaders: [
+            // {
+            //     test: /[\/]angular\.js$/,
+            //     include: /node_modules\/angular/,
+            //     use: "exports-loader?angular"
+            // },
+            // {
+            //     test: /\.html$/,
+            //     exclude: /node_modules/,
+            //     use: 'html-loader'
+            // },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: 'babel-loader?presets=es2015&presets=stage-0&presets=angular',
+            }
+        ]
+    },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: 'commons',
