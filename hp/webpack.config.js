@@ -39,11 +39,11 @@ module.exports = {
             //     include: /node_modules\/angular/,
             //     use: "exports-loader?angular"
             // },
-            // {
-            //     test: /\.html$/,
-            //     exclude: /node_modules/,
-            //     use: 'html-loader'
-            // },
+            {
+                test: /\.html$/,
+                exclude: /node_modules/,
+                use: 'html-loader'
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
