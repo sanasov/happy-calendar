@@ -15,6 +15,7 @@ function isExternal(module) {
 
 module.exports = {
     devtool: 'cheap-module-eval-source-map', // for view src in browser
+    watch: false,
     context: SRC_DIR,
     entry: {
         app: './index.js'
@@ -24,7 +25,7 @@ module.exports = {
             SRC_DIR,
             NODE_MODULE_ROOT
         ],
-        // extensions: ['.js', '.json', 'html']
+        extensions: ['.js', '.json']
     },
     output: {
         path: DEST_DIR,
