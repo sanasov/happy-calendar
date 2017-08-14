@@ -10,6 +10,16 @@
     <artifactId>db</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
+    <profiles>
+        <profile>
+            <id>local_deploy</id>
+            <properties>
+                <liquibase.url>jdbc:postgresql://127.0.0.1:5433/postgres</liquibase.url>
+                <liquibase.username>postgres</liquibase.username>
+                <liquibase.password>postgres</liquibase.password>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
         <resources>
@@ -53,11 +63,11 @@
             <artifactId>liquibase-core</artifactId>
             <version>3.5.3</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>mysql</groupId>-->
-            <!--<artifactId>mysql-connector-java</artifactId>-->
-            <!--<version>6.0.5</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.1.4</version>
+        </dependency>
     </dependencies>
 
 </project>

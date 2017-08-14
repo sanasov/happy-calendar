@@ -157,6 +157,7 @@
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>2.8.5</version>
         </dependency>
+        <!--orm jdbc driver-->
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
@@ -167,11 +168,18 @@
             <artifactId>mybatis-spring</artifactId>
             <version>1.3.1</version>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>mysql</groupId>-->
-        <!--<artifactId>mysql-connector-java</artifactId>-->
-        <!--<version>6.0.5</version>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-typehandlers-jsr310</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.1.4</version>
+        </dependency>
+
         <!--lombok for equals hashcode and toString(beware cycle link) autogeneration-->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -194,11 +202,6 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-typehandlers-jsr310</artifactId>
-            <version>1.0.2</version>
-        </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>java-hamcrest</artifactId>
