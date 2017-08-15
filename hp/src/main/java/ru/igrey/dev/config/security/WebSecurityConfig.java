@@ -19,7 +19,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http
+                .csrf()
+                .disable()
+
+                .sessionManagement()
+                .sessionAuthenticationStrategy((authentication, httpServletRequest, httpServletResponse) ->
+                        httpServletRequest.getSession().setMaxInactiveInterval(7200)
+                )
+
+                .and()
+                .authorizeRequests()
                 .antMatchers("/resources/**", "/login", "/logout", "/external/**").permitAll()
 
                 .and()
@@ -35,10 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/login?logout")
-                .invalidateHttpSession(true)
-
-                .and()
-                .csrf();
+                .invalidateHttpSession(true);
     }
 
 }

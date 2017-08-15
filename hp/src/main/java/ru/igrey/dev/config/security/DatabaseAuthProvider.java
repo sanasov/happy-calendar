@@ -15,13 +15,13 @@ public class DatabaseAuthProvider implements AuthenticationProvider {
 
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String login = String.valueOf(authentication.getPrincipal());
-        if (login.equals("igrey")) {
+        if (!login.equals("igrey")) {
             throw new BadCredentialsException("Bad user");
         }
         return new UsernamePasswordAuthenticationToken(
                 authentication.getPrincipal(),
-                authentication.getCredentials(), authentication
-                .getAuthorities()
+                authentication.getCredentials(),
+                authentication.getAuthorities()
         );
     }
 
