@@ -19,4 +19,14 @@ public class Main {
         logger.info("INDEX HELLO");
         return "index";
     }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @RequestMapping("/403")
+    public String accesssDenied() {
+        return "403";
+    }
 }

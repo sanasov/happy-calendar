@@ -1,7 +1,9 @@
 package ru.igrey.dev.config;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.filter.DelegatingFilterProxy;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import ru.igrey.dev.config.security.WebSecurityConfig;
 
 import javax.servlet.Filter;
 import javax.servlet.ServletRegistration;
@@ -19,7 +21,8 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[]{
-                WebMvcConfig.class
+                WebMvcConfig.class,
+                WebSecurityConfig.class
         };
     }
 
@@ -33,12 +36,11 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
         CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
         characterEncodingFilter.setEncoding("UTF-8");
         characterEncodingFilter.setForceEncoding(true);
-
-//        DelegatingFilterProxy securityFilterChain = new DelegatingFilterProxy("springSecurityFilterChain");
+        DelegatingFilterProxy securityFilterChain = new DelegatingFilterProxy("springSecurityFilterChain");
 
         return new Filter[]{
-                characterEncodingFilter
-//                securityFilterChain
+                characterEncodingFilter,
+                securityFilterChain
         };
     }
 

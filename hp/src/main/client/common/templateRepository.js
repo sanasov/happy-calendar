@@ -9,6 +9,9 @@ export default function templateRepository($templateCache) {
         pages: {
             get index() {
                 return getFromCache('index-page.tpl.html', require('../controller/index-page.tpl.html'));
+            },
+            get login() {
+                return getFromCache('login-page.tpl.html', require('../controller/login-page.tpl.html'));
             }
         }
 

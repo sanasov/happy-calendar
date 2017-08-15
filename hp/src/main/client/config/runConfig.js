@@ -3,6 +3,7 @@
  */
 export default function runConfig(templateRepository) {
     templateRepository.pages.index;
+    templateRepository.pages.login;
 }
 
 runConfig.$inject = [

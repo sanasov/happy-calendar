@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body id="login-page" class="account-bg">
+
+<br class="xs-80"/>
+
+<div class="account-wrapper">
+
+    <div class="account-body">
+
+        <h1>
+            В доступе отказано<br /> (код ошибки "403")
+        </h1>
+
+        <p>
+            Возможно у вас нет соответствующей роли
+        </p>
+
+        <a th:href="@{/logout}">Попробуйте войти в систему под другим пользователем</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
