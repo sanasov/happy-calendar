@@ -5,6 +5,9 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
+import java.util.Arrays;
 
 /**
  * Created by Sergey Anasov on 15.08.2017.
@@ -21,7 +24,7 @@ public class DatabaseAuthProvider implements AuthenticationProvider {
         return new UsernamePasswordAuthenticationToken(
                 authentication.getPrincipal(),
                 authentication.getCredentials(),
-                authentication.getAuthorities()
+                Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN"))
         );
     }
 

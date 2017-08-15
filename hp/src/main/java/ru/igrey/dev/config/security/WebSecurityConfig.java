@@ -30,14 +30,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .and()
                 .authorizeRequests()
-                .antMatchers("/resources/**", "/login", "/logout", "/external/**").permitAll()
-
+                .antMatchers("/resources/**", "/login", "/logout", "/authorization").permitAll()
+                .antMatchers("/**").access("hasRole('ROLE_ADMIN')")
                 .and()
                 .exceptionHandling()
                 .accessDeniedPage("/403")
 
                 .and()
                 .formLogin()
+                .defaultSuccessUrl("/", false)
                 .loginPage("/login").permitAll()
                 .loginProcessingUrl("/authenticate")
 

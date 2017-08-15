@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="App"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="stylesheet" href="resources/common.css"/>
     <script src="resources/app/commons.js"></script>
     <script src="resources/app/bundle.js"></script>
+    <base th:href="@{/}"/>
 </head>
-<body ng-app="App">
+<body>
 <div ng-controller="HpCtrl" class="red-color">
     First Name: <input type="text" ng-model="firstName"><br>
     Last Name: <input type="text" ng-model="lastName"><br>
