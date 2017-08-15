@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="App"
       xmlns:th="http://www.thymeleaf.org">
-
-<head th:substituteby="layout/headerFragments :: headTag"/>
+<head>
+    <link rel="stylesheet" href="resources/common.css"/>
+    <script src="resources/app/commons.js"></script>
+    <script src="resources/app/bundle.js"></script>
+</head>
 <body>
 <div ng-include="'login-page.tpl.html'"></div>
 </body>
