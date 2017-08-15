@@ -24,7 +24,7 @@ public class DatabaseAuthProvider implements AuthenticationProvider {
         return new UsernamePasswordAuthenticationToken(
                 authentication.getPrincipal(),
                 authentication.getCredentials(),
-                Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN"))
+                Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN1"))
         );
     }
 
