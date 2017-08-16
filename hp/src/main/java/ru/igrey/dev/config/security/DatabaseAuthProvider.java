@@ -27,7 +27,7 @@ public class DatabaseAuthProvider implements AuthenticationProvider {
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         String login = String.valueOf(authentication.getPrincipal());
         User user = userRepository.findByLogin(login);
-        if (user == null) {
+        if (user == null || !user.getPassword().equals(authentication.getCredentials())) {
             throw new BadCredentialsException("Bad user");
         }
         return new UsernamePasswordAuthenticationToken(
