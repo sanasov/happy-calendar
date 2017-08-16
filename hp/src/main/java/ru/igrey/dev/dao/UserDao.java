@@ -6,7 +6,7 @@ import ru.igrey.dev.domain.User;
 import java.util.List;
 
 public interface UserDao {
-    @Insert("INSERT INTO USER (LOGIN, PASSWORD, USER_NAME, USER_LAST_NAME, BIRTHDAY) " +
+    @Insert("INSERT INTO HP_USER (LOGIN, PASSWORD, USER_NAME, USER_LAST_NAME, BIRTHDAY) " +
             "VALUES ( #{login, jdbcType=VARCHAR}," +
             " #{password, jdbcType=VARCHAR}," +
             " #{username, jdbcType=VARCHAR}," +
@@ -17,7 +17,7 @@ public interface UserDao {
     Long insert(User user);
 
 
-    @Update("UPDATE USER SET " +
+    @Update("UPDATE HP_USER SET " +
             " LOGIN = #{login, jdbcType=VARCHAR}," +
             " PASSWORD =  #{password, jdbcType=VARCHAR}, " +
             " USER_NAME = #{username, jdbcType=VARCHAR}," +
@@ -27,7 +27,7 @@ public interface UserDao {
     )
     void update(User user);
 
-    @Select("SELECT * FROM USER WHERE ID = #{id, jdbcType=NUMERIC}")
+    @Select("SELECT * FROM HP_USER WHERE ID = #{id, jdbcType=NUMERIC}")
     @Results(id = "UserMap", value = {
             @Result(property = "id", column = "ID"),
             @Result(property = "login", column = "LOGIN"),
@@ -38,12 +38,12 @@ public interface UserDao {
     })
     User selectById(Long id);
 
-    @Select("SELECT * FROM USER WHERE LOGIN = #{login, jdbcType=VARCHAR}")
+    @Select("SELECT * FROM HP_USER WHERE LOGIN = #{login, jdbcType=VARCHAR}")
     @ResultMap("UserMap")
     User selectByLogin(String login);
 
     @Select("SELECT r.ROLE_VALUE FROM ROLE AS r " +
-            "LEFT JOIN MTM_USER2ROLE AS mtm ON mtm.role_id = r.id " +
+            "LEFT JOIN MTM_HP_USER2ROLE AS mtm ON mtm.role_id = r.id " +
             "WHERE mtm.user_id = #{userId, jdbcType=NUMERIC}")
     List<String> selectRolesByUserId(Long userId);
 

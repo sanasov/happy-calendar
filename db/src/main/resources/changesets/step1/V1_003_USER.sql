@@ -1,6 +1,6 @@
 --liquibase formatted sql logicalFilePath:V1_003_USER.sql
 --changeset sanasov:1.3 runOnChange:true context:prod
-CREATE TABLE hp.user (
+CREATE TABLE hp.hp_user (
   id             BIGSERIAL PRIMARY KEY,
   login          VARCHAR(100) UNIQUE     NOT NULL,
   password       VARCHAR(64)             NOT NULL,
