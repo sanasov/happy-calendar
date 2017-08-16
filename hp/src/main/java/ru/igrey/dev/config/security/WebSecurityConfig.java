@@ -16,7 +16,7 @@ import ru.igrey.dev.config.RepositoryConfig;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    RepositoryConfig repositoryConfig;
+    private RepositoryConfig repositoryConfig;
 
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
@@ -37,7 +37,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/resources/**", "/login", "/logout", "/authorization").permitAll()
-                .antMatchers("/**").access("hasRole('ROLE_ADMIN')")
+                .antMatchers("/**").access("hasRole('ROLE_USER')")
                 .and()
                 .exceptionHandling()
                 .accessDeniedPage("/403")

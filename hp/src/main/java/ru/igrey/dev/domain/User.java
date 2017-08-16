@@ -6,12 +6,12 @@ import java.util.List;
 public class User {
 
     private Long id;
-    String login;
-    String password;
-    String username;
-    String lastName;
-    LocalDate birthday;
-    List<String> roles;
+    private String login;
+    private String password;
+    private String username;
+    private String lastName;
+    private LocalDate birthday;
+    private List<String> roles;
 
     public User() {
     }

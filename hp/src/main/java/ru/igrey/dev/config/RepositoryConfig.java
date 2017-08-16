@@ -11,9 +11,9 @@ import ru.igrey.dev.repository.UserRepository;
 @Import({DaoSpringConfig.class})
 public class RepositoryConfig {
     @Autowired
-    DaoSpringConfig daoSpringConfig;
+    private DaoSpringConfig daoSpringConfig;//NOPMD
     @Autowired
-    UserDao userDao;
+    private UserDao userDao;
 
     public UserRepository userRepository() {
         return new DbUserRepository(userDao);

@@ -28,7 +28,7 @@ public class DaoSpringConfig {
         try {
             Context initContext = new InitialContext();
             Context envContext = (Context) initContext.lookup("java:/comp/env");
-            return (DataSource) envContext.lookup("jdbc/member_dashboard");
+            return (DataSource) envContext.lookup("jdbc/hp");
         } catch (Exception e) {
             throw new RuntimeException("Cannot resolve datasource! Details: ", e);
         }
