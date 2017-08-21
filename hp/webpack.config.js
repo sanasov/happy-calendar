@@ -9,7 +9,6 @@ function isExternal(module) {
     if (!module.userRequest) {
         return false;
     }
-    debugger
     return module.userRequest.indexOf('node_modules') >= 0;
 }
 
@@ -18,14 +17,14 @@ module.exports = {
     watch: false,
     context: SRC_DIR,
     entry: {
-        app: './index.js'
+        app: './main.ts'
     },
     resolve: {
         modules: [
             SRC_DIR,
             NODE_MODULE_ROOT
         ],
-        extensions: ['.js', '.json']
+        extensions: ['.tsx', '.ts', '.js', '.json']
     },
     output: {
         path: DEST_DIR,
@@ -34,11 +33,11 @@ module.exports = {
     },
     module: {
         loaders: [
-            // {
-            //     test: /[\/]angular\.js$/,
-            //     include: /node_modules\/angular/,
-            //     use: "exports-loader?angular"
-            // },
+            {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                use: 'ts-loader'
+            },
             {
                 test: /\.html$/,
                 exclude: /node_modules/,
@@ -53,8 +52,8 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-            name: 'commons',
-            filename: "commons.js",
+            name: 'vendor',
+            filename: "vendor.js",
             minChunks: (module) => isExternal(module)
         })
     ]
