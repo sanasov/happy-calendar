@@ -13,6 +13,7 @@ function isExternal(module) {
 }
 
 module.exports = {
+
     devtool: 'cheap-module-eval-source-map', // for view src in browser
     watch: false,
     context: SRC_DIR,
@@ -34,9 +35,13 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.tsx?$/,
+                test: /\.ts$/,
                 exclude: /node_modules/,
-                use: 'ts-loader'
+                use: 'awesome-typescript-loader'
+            }, {
+                test: /\.ts$/,
+                exclude: /node_modules/,
+                use: 'angular2-template-loader'
             },
             {
                 test: /\.html$/,
