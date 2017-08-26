@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-var helpers = require('./helpers');
 
 const SRC_DIR = path.resolve(__dirname, 'src/main/client');
 const DEST_DIR = path.resolve(__dirname, 'src/main/webapp/resources/app');
