@@ -6,8 +6,19 @@
     <base th:href="@{/}"/>
 </head>
 <body>
-<login-component></login-component>
+<div class="login">
+    <form method="POST" action="authenticate">
+
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</div>
 </body>
-<script src="resources/app/vendor.js"></script>
-<script src="resources/app/bundle.js"></script>
 </html>
