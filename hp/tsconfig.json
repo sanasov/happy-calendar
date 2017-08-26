@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",               //Specify ECMAScript target version
-    "module": "commonjs",          //Specify module code generation: "None", "CommonJS", "AMD", "System", "UMD", "ES6", "ES2015" or "ESNext".
+    "target": "es5", //Specify ECMAScript target version
+    "module": "commonjs", //"ES2015" Specify module code generation: "None", "CommonJS", "AMD", "System", "UMD", "ES6", "ES2015" or "ESNext".
     "moduleResolution": "node",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
@@ -13,13 +13,21 @@
       // For --target ES5: DOM,ES5,ScriptHost
       // For --target ES6: DOM,ES6,DOM.Iterable,ScriptHost
       "es2015",
-      "dom"
+      "dom",
+      "es6"
     ]
   },
+  "typeRoots": [
+    "./node_modules/@types/"
+  ],
+//  "awesomeTypescriptLoaderOptions": {
+//    "useWebpackText": true
+//  },
   "exclude": [
     "node_modules"
   ],
-  "compileOnSave": false,           //при значении true указывает используемой IDE сгенерировать все файлы js при каждом сохранении файлов
+  "compileOnSave": false,
+  //при значении true указывает используемой IDE сгенерировать все файлы js при каждом сохранении файлов
   "buildOnSave": false
 }
 

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector: 'hp-app',
-    template: '<div>Hello Sergey</div>'
+    selector: 'app-component',
+    templateUrl: './index-page.tpl.html'
 })
 export class AppComponent { }

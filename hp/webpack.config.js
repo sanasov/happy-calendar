@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+var helpers = require('./helpers');
 
 const SRC_DIR = path.resolve(__dirname, 'src/main/client');
 const DEST_DIR = path.resolve(__dirname, 'src/main/webapp/resources/app');
@@ -33,33 +34,56 @@ module.exports = {
         publicPath: '/app/'
     },
     module: {
+        // rules: [
+        //     {
+        //         test: /\.ts$/,
+        //         use: [
+        //             'awesome-typescript-loader',
+        //             'angular2-template-loader'
+        //         ]
+        //     },
+        //     {
+        //         test: /\.html$/,
+        //         exclude: /node_modules/,
+        //         use: 'html-loader'
+        //     }
+        // ],
         loaders: [
+            // {
+            //     test: /\.ts$/,
+            //     exclude: /node_modules/,
+            //     options: {configFileName: helpers.root('src', 'tsconfig.json')},
+            //     use: 'awesome-typescript-loader'
+            // }, {
+            //     test: /\.ts$/,
+            //     exclude: /node_modules/,
+            //     use: 'angular2-template-loader'
+            // },
+            // {
+            //     test: /\.html$/,
+            //     exclude: /node_modules/,
+            //     use: 'html-loader'
+            // }
             {
                 test: /\.ts$/,
-                exclude: /node_modules/,
-                use: 'awesome-typescript-loader'
-            }, {
-                test: /\.ts$/,
-                exclude: /node_modules/,
-                use: 'angular2-template-loader'
+                use: [
+                    'awesome-typescript-loader',
+                    'angular2-template-loader'
+                ]
             },
             {
                 test: /\.html$/,
                 exclude: /node_modules/,
                 use: 'html-loader'
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: 'babel-loader?presets=es2015&presets=stage-0&presets=angular',
             }
         ]
     },
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            filename: "vendor.js",
-            minChunks: (module) => isExternal(module)
-        })
-    ]
+    plugins:
+        [
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'vendor',
+                filename: "vendor.js",
+                minChunks: (module) => isExternal(module)
+            })
+        ]
 }

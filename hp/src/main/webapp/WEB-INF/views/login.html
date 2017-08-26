@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" ng-app="App"
+<html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="stylesheet" href="resources/common.css"/>
-    <script src="resources/app/commons.js"></script>
-    <script src="resources/app/bundle.js"></script>
     <base th:href="@{/}"/>
 </head>
 <body>
-<div ng-include="'login-page.tpl.html'"></div>
+<login-component></login-component>
 </body>
+<script src="resources/app/vendor.js"></script>
+<script src="resources/app/bundle.js"></script>
 </html>
