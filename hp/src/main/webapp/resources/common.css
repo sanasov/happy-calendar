@@ -3,7 +3,8 @@
 }
 
 .login form {
-    margin: 500px auto;
+    margin: 200px auto;
+    width: 500px;
 }
 
 /* Full-width inputs */

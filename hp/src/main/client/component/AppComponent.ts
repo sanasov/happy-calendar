@@ -4,4 +4,10 @@ import {Component} from '@angular/core';
     selector: 'app-component',
     templateUrl: './index-page.tpl.html'
 })
-export class AppComponent { }
+export class AppComponent {
+    private fisrtname: string;
+
+    constructor() {
+        this.fisrtname = "Sergey";
+    }
+}
