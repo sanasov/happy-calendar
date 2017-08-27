@@ -8,6 +8,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {EventComponent} from "./component/event/event.component";
 import {CalendarComponent} from "./component/calendar/calendar.component";
 import {HolidayComponent} from "./component/holiday/holiday.component";
+import {MaterialModule} from "./material.module";
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {HolidayComponent} from "./component/holiday/holiday.component";
         BrowserModule,
         FormsModule,
         HttpModule,
-        AppRoutingModule
+        AppRoutingModule,
+        MaterialModule
     ],
     providers: [],
     bootstrap: [AppComponent]
