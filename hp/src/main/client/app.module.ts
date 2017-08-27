@@ -3,16 +3,26 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {AppComponent} from "./component/AppComponent";
+import {NavComponent} from "./component/nav/nav.component";
+import {AppRoutingModule} from "./app-routing.module";
+import {EventComponent} from "./component/event/event.component";
+import {CalendarComponent} from "./component/calendar/calendar.component";
+import {HolidayComponent} from "./component/holiday/holiday.component";
 
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        NavComponent,
+        CalendarComponent,
+        EventComponent,
+        HolidayComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        AppRoutingModule
     ],
     providers: [],
     bootstrap: [AppComponent]
