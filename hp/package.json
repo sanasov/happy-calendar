@@ -30,6 +30,14 @@
     "@types/node": "^6.0.45",
     "angular2-template-loader": "^0.6.0",
     "awesome-typescript-loader": "^3.0.4",
+
+    "extract-text-webpack-plugin": "2.1.2",
+    "optimize-css-assets-webpack-plugin": "2.0.0",
+    "node-sass": "4.5.3",
+    "sass-loader": "6.0.5",
+    "css-loader": "0.28.0",
+    "to-string-loader": "^1.1.5",
+
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
@@ -38,6 +46,7 @@
     "babel-preset-stage-0": "^6.22.0",
     "debug-webpack-plugin": "^0.1.0",
     "exports-loader": "^0.6.4",
+
     "html-loader": "^0.4.5",
     "typescript": "^2.4.2",
 
