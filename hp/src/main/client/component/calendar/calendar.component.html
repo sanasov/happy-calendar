@@ -1,1 +1,7 @@
-<div>Calendar</div>
+<div>
+    <md-input-container>
+        <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+        <button mdSuffix [mdDatepickerToggle]="picker"></button>
+    </md-input-container>
+    <md-datepicker #picker opened="true"></md-datepicker>
+</div>

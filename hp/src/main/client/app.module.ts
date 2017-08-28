@@ -9,6 +9,7 @@ import {EventComponent} from "./component/event/event.component";
 import {CalendarComponent} from "./component/calendar/calendar.component";
 import {HolidayComponent} from "./component/holiday/holiday.component";
 import {MaterialModule} from "./material.module";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import {MaterialModule} from "./material.module";
     ],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         FormsModule,
         HttpModule,
         AppRoutingModule,
