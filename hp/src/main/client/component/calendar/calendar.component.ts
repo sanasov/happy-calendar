@@ -7,9 +7,13 @@ import {MdDatepicker} from "@angular/material";
 })
 export class CalendarComponent {
     private fisrtname: string;
-    @ViewChild(MdDatepicker) datepicker: MdDatepicker<Date>;
-
+     private title: string;
     constructor() {
         this.fisrtname = "Sergey";
+        this.title = "Hello";
+    }
+
+    onBlur() {
+        alert(this.title);
     }
 }

@@ -1,4 +1,4 @@
---liquibase formatted sql logicalFilePath:V1_005_ROLE_USER_DATA.sql
+--liquibase formatted sql logicalFilePath:V1_006_ROLE_USER_DATA.sql
 --changeset sanasov:1.6 runOnChange:true context:prod
 
 INSERT INTO hp.hp_user (id, login, password, user_name, user_last_name, birthday)

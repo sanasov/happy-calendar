@@ -1,7 +1,5 @@
 <div>
     <md-input-container>
-        <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
-        <button mdSuffix [mdDatepickerToggle]="picker"></button>
+        <input mdInput [(ngModel)]="title" (blur) = "onBlur()" placeholder="First name">
     </md-input-container>
-    <md-datepicker #picker opened="true"></md-datepicker>
 </div>
