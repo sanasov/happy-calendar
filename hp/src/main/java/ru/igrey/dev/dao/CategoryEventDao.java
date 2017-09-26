@@ -2,7 +2,6 @@ package ru.igrey.dev.dao;
 
 import org.apache.ibatis.annotations.*;
 import ru.igrey.dev.entity.event.CategoryEventEntity;
-import ru.igrey.dev.entity.event.EventEntity;
 
 import java.util.List;
 
@@ -15,7 +14,7 @@ public interface CategoryEventDao {
             ")"
     )
     @Options(useGeneratedKeys = true, keyProperty = "ID", keyColumn = "ID")
-    void insert(EventEntity entity);
+    void insert(CategoryEventEntity entity);
 
 
     @Update({"UPDATE EVENT_CATEGORY SET " +
@@ -24,7 +23,7 @@ public interface CategoryEventDao {
             " CATEGORY_ID = #{categoryId, jdbcType=NUMERIC}" +
             " WHERE ID = #{id, jdbcType=NUMERIC}"}
     )
-    void update(EventEntity entity);
+    void update(CategoryEventEntity entity);
 
     @Select("SELECT * FROM EVENT_CATEGORY WHERE ID = #{id, jdbcType=NUMERIC}")
     @Results(id = "CategoryEventMap", value = {
