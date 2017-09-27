@@ -11,6 +11,7 @@ import {HolidayComponent} from "./component/holiday/holiday.component";
 import {MaterialModule} from "./material.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {EventService} from "./service/EventService";
+import {ProfileComponent} from "./component/profile/profile.component";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {EventService} from "./service/EventService";
         NavComponent,
         CalendarComponent,
         EventComponent,
-        HolidayComponent
+        HolidayComponent,
+        ProfileComponent
     ],
     imports: [
         BrowserModule,
