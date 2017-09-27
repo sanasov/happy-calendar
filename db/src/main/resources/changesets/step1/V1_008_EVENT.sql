@@ -5,7 +5,7 @@ CREATE TABLE hp.event (
   id             BIGSERIAL                PRIMARY KEY,
   title          VARCHAR(200)             NOT NULL,
   description    VARCHAR(1000)            NOT NULL,
-  category_id    BIGINT                   NOT NULL REFERENCES hp.event_category (id) ON DELETE CASCADE ON UPDATE CASCADE,
+  category_id    BIGINT                   NOT NULL REFERENCES hp.category_event (id) ON DELETE CASCADE ON UPDATE CASCADE,
   date_time      TIMESTAMP                NOT NULL,
   create_date    TIMESTAMP                DEFAULT now()
 );

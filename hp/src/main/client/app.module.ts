@@ -10,6 +10,7 @@ import {CalendarComponent} from "./component/calendar/calendar.component";
 import {HolidayComponent} from "./component/holiday/holiday.component";
 import {MaterialModule} from "./material.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {EventService} from "./service/EventService";
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
         AppRoutingModule,
         MaterialModule
     ],
-    providers: [],
+    providers: [EventService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

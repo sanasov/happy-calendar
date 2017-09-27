@@ -1,10 +1,7 @@
 package ru.igrey.dev.config;
 
 import org.springframework.context.MessageSource;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.stereotype.Controller;
@@ -28,6 +25,7 @@ import static org.springframework.context.annotation.ComponentScan.Filter;
 @Configuration
 @PropertySource("classpath:application.properties")
 @ComponentScan(basePackages = {"ru.igrey.dev.controller"}, includeFilters = @Filter(Controller.class), useDefaultFilters = false)
+@Import({RepositorySpringConfig.class})
 class WebMvcConfig extends WebMvcConfigurationSupport {
     private static final String MESSAGE_SOURCE = "/WEB-INF/i18n/messages";
     private static final String VIEWS = "/WEB-INF/views/";

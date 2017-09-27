@@ -7,7 +7,7 @@ import ru.igrey.dev.entity.event.CategoryEventEntity;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class DbCategoryEventRepository implements CategoryEventRepository{
+public class DbCategoryEventRepository implements CategoryEventRepository {
 
     private CategoryEventDao dao;
 

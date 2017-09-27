@@ -8,15 +8,15 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import ru.igrey.dev.config.RepositoryConfig;
+import ru.igrey.dev.config.RepositorySpringConfig;
 
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-@Import({RepositoryConfig.class})
+@Import({RepositorySpringConfig.class})
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private RepositoryConfig repositoryConfig;
+    private RepositorySpringConfig repositoryConfig;
 
     @Autowired
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {

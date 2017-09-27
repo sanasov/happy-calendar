@@ -1,1 +1,15 @@
-<div>Events</div>
+<md-card
+        *ngFor="let category of categoryEvents"
+        class="category-event-card">
+    <md-card-header>
+        <md-card-title>{{category.title}}</md-card-title>
+        <md-card-subtitle>{{category.description}}</md-card-subtitle>
+    </md-card-header>
+    <md-card-content>
+        События
+        <div *ngFor="let event of category.events">{{event.datetime}} - {{event.title}}</div>
+    </md-card-content>
+    <md-card-actions>
+        <button md-button>Add</button>
+    </md-card-actions>
+</md-card>

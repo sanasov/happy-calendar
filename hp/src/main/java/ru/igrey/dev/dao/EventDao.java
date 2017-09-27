@@ -33,4 +33,7 @@ public interface EventDao {
             @Result(property = "dateTime", column = "DATE_TIME")
     })
     EventEntity select(Long id);
+
+    @Select("SELECT * FROM hp.EVENT WHERE CATEGORY_ID = #{category_id, jdbcType=NUMERIC}")
+    EventEntity selectByCategory(Long category_id);
 }
