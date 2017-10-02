@@ -15,4 +15,8 @@ export class EventComponent {
             this.categoryEvents = categoryEventsResult
         });
     }
+
+    open(category: CategoryEvent) {
+        alert("Hello");
+    }
 }

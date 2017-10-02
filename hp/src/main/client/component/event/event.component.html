@@ -1,15 +1,10 @@
-<md-card
-        *ngFor="let category of categoryEvents"
-        class="category-event-card">
-    <md-card-header>
-        <md-card-title>{{category.title}}</md-card-title>
-        <md-card-subtitle>{{category.description}}</md-card-subtitle>
-    </md-card-header>
-    <md-card-content>
-        События
-        <div *ngFor="let event of category.events">{{event.datetime}} - {{event.title}}</div>
-    </md-card-content>
-    <md-card-actions>
-        <button md-button>Add</button>
-    </md-card-actions>
-</md-card>
+<div>
+    <button
+            *ngFor="let category of categoryEvents"
+            class="category-event-card"
+            (click)="open(category)"
+            md-raised-button>
+        <h2>{{category.title}}</h2>
+        <p class="grey-color">{{category.description}}</p>
+    </button>
+</div>

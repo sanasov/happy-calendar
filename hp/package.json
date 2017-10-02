@@ -32,17 +32,15 @@
     "angular2-template-loader": "^0.6.0",
     "awesome-typescript-loader": "^3.0.4",
 
+    "copy-webpack-plugin": "4.0.1",
+    "extract-text-webpack-plugin": "2.1.2",
+
     "node-sass": "4.5.3",
     "sass-loader": "6.0.5",
     "css-loader": "0.28.0",
     "to-string-loader": "^1.1.5",
 
-    "babel-cli": "^6.24.0",
-    "babel-core": "^6.24.0",
-    "babel-loader": "^6.4.1",
-    "babel-preset-angular": "6.0.15",
-    "babel-preset-es2015": "^6.24.0",
-    "babel-preset-stage-0": "^6.22.0",
+
     "exports-loader": "^0.6.4",
 
     "html-loader": "^0.4.5",
@@ -51,10 +49,7 @@
     "@angular/cdk": "2.0.0-beta.8",
     "@angular/material": "2.0.0-beta.8",
 
-    "webpack": "3.0.0",
-    "webpack-preset": "^0.2.0",
-    "webpack-preset-babel": "^0.2.0",
-    "webpack-preset-babel-stage-0": "^0.2.0"
+    "webpack": "3.0.0"
   },
   "license": "ISC"
 }
