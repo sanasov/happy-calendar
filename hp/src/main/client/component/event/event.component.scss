@@ -1,5 +1,17 @@
 .category-event-card {
   width: 400px;
-  display: inline-block;
+  height: 135px;
+}
+
+.flex-block {
+  align-items: center;
   margin-right: 20px;
+  margin-top: 20px;
+
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
 }

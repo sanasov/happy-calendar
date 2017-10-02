@@ -5,7 +5,10 @@ import {
     MdDialogModule,
     MdGridListModule,
     MdIconModule,
+
     MdInputModule,
+    MdFormFieldModule,
+
     MdListModule,
     MdMenuModule,
     MdProgressBarModule,
@@ -26,7 +29,10 @@ import {NgModule} from '@angular/core';
         MdSliderModule,
         MdProgressBarModule,
         MdAutocompleteModule,
+
         MdInputModule,
+        MdFormFieldModule,
+
         MdGridListModule,
         MdSnackBarModule,
         MdProgressSpinnerModule,
@@ -45,7 +51,10 @@ import {NgModule} from '@angular/core';
         MdSliderModule,
         MdProgressBarModule,
         MdAutocompleteModule,
+
         MdInputModule,
+        MdFormFieldModule,
+
         MdGridListModule,
         MdSnackBarModule,
         MdProgressSpinnerModule,
