@@ -26,7 +26,7 @@ public class DbCategoryEventRepository implements CategoryEventRepository {
     @Override
     public CategoryEvent save(CategoryEvent categoryEvent) {
         CategoryEventEntity savedEntity = categoryEvent.toEntity();
-        if (categoryEvent == null) {
+        if (savedEntity.getId() == null) {
             dao.insert(savedEntity);
         } else {
             dao.update(savedEntity);

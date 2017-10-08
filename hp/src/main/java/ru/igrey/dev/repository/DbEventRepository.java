@@ -19,8 +19,8 @@ public class DbEventRepository implements EventRepository{
     }
 
     @Override
-    public Event save(Event event) {
-        EventEntity savedEntity = event.toEntity();
+    public Event save(Event event, Long categoryId) {
+        EventEntity savedEntity = event.toEntity(categoryId);
         if (event == null) {
             eventDao.insert(savedEntity);
         } else {

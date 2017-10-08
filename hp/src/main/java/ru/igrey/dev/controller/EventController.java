@@ -1,9 +1,7 @@
 package ru.igrey.dev.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.igrey.dev.domain.event.CategoryEvent;
 import ru.igrey.dev.repository.CategoryEventRepository;
 import ru.igrey.dev.view.CategoryEventView;
@@ -26,6 +24,11 @@ public class EventController {
         return categoryEventRepository.findAll().stream()
                 .map(CategoryEvent::toView)
                 .collect(Collectors.toList());
+    }
+
+    @PostMapping("save-category")
+    public CategoryEventView saveCategory(@RequestBody CategoryEventView categoryEventView) {
+        return categoryEventRepository.save(CategoryEvent.fromView(categoryEventView)).toView();
     }
 
 }

@@ -16,14 +16,21 @@ export class EventService {
     }
 
     private headers = new Headers({'Content-Type': 'application/json'});
-    private categoryEventUrl = 'event/all-categories';
+    private GET_ALL_CATEGORIES = 'event/all-categories';
+    private SAVE_CATEGORY = 'event/save-category';
 
     categoryEvents(): Promise<CategoryEvent[]> {
-        return this.http.get(this.categoryEventUrl)
+        return this.http.get(this.GET_ALL_CATEGORIES)
             .toPromise()
-            .then(response => {
-                return response.json()
-            })
+            .then(response => response.json())
+            .catch(this.handleError);
+    }
+
+    save(categoryEvent: CategoryEvent): Promise<CategoryEvent> {
+        return this.http
+            .post(this.SAVE_CATEGORY, JSON.stringify(categoryEvent), {headers: this.headers})
+            .toPromise()
+            .then(response => response.json())
             .catch(this.handleError);
     }
 
@@ -37,13 +44,6 @@ export class EventService {
     // }
     //
     //
-    // createBike(bike: Bike): Promise<Bike> {
-    //     return this.http
-    //         .post(this.bikesUrl, JSON.stringify(bike), { headers: this.headers })
-    //         .toPromise()
-    //         .then(res => res.json().data as Bike)
-    //         .catch(this.handleError);
-    // }
     //
     // updateBike(bike: Bike): Promise<Bike> {
     //     const url = `${this.bikesUrl}/${bike.id}`;

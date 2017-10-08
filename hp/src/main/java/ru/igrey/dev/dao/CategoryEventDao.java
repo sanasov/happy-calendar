@@ -6,21 +6,19 @@ import ru.igrey.dev.entity.event.CategoryEventEntity;
 import java.util.List;
 
 public interface CategoryEventDao {
-    @Insert("INSERT INTO CATEGORY_EVENT (TITLE, DESCRIPTION, DATE_TIME) " +
+    @Insert("INSERT INTO CATEGORY_EVENT (TITLE, DESCRIPTION) " +
             "VALUES (" +
             " #{title, jdbcType=VARCHAR}," +
             " #{description, jdbcType=VARCHAR}" +
-            " #{dateTime, jdbcType=DATE}" +
             ")"
     )
-    @Options(useGeneratedKeys = true, keyProperty = "ID", keyColumn = "ID")
+    @Options(useGeneratedKeys = true, keyColumn = "id")
     void insert(CategoryEventEntity entity);
 
 
     @Update({"UPDATE CATEGORY_EVENT SET " +
             " TITLE = #{title, jdbcType=VARCHAR}," +
-            " DESCRIPTION = #{description, jdbcType=VARCHAR}, " +
-            " CATEGORY_ID = #{categoryId, jdbcType=NUMERIC}" +
+            " DESCRIPTION = #{description, jdbcType=VARCHAR} " +
             " WHERE ID = #{id, jdbcType=NUMERIC}"}
     )
     void update(CategoryEventEntity entity);

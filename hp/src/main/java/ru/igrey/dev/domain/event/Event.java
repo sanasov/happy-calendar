@@ -23,8 +23,8 @@ public class Event {
         return new Event(entity.getId(), entity.getTitle(), entity.getDateTime(), entity.getDescription());
     }
 
-    public EventEntity toEntity() {
-        return new EventEntity(id, title, dateTime, description);
+    public EventEntity toEntity(Long categoryId) {
+        return new EventEntity(id, title, dateTime, description, categoryId);
     }
 
     public static Event fromView(EventView view) {

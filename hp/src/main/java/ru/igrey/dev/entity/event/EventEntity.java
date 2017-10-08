@@ -8,12 +8,14 @@ public class EventEntity {
     private String title;
     private LocalDateTime dateTime;
     private String description;
+    private Long categoryId;
 
-    public EventEntity(Long id, String title, LocalDateTime dateTime, String description) {
+    public EventEntity(Long id, String title, LocalDateTime dateTime, String description, Long categoryId) {
         this.id = id;
         this.title = title;
         this.dateTime = dateTime;
         this.description = description;
+        this.categoryId = categoryId;
     }
 
     public EventEntity() {
@@ -49,5 +51,13 @@ public class EventEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
     }
 }

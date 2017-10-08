@@ -3,7 +3,9 @@ package ru.igrey.dev.domain.event;
 import ru.igrey.dev.entity.event.CategoryEventEntity;
 import ru.igrey.dev.view.CategoryEventView;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class CategoryEvent {
@@ -22,7 +24,7 @@ public class CategoryEvent {
 
 
     public CategoryEventEntity toEntity() {
-        return new CategoryEventEntity(id, title, description, events.stream().map(Event::toEntity).collect(Collectors.toList()));
+        return new CategoryEventEntity(id, title, description, events.stream().map(event -> event.toEntity(id)).collect(Collectors.toList()));
     }
 
 
@@ -37,6 +39,13 @@ public class CategoryEvent {
 
 
     public static CategoryEvent fromView(CategoryEventView view) {
-        return new CategoryEvent(view.getId(), view.getTitle(), view.getDescription(), view.getEvents().stream().map(Event::fromView).collect(Collectors.toList()));
+        return new CategoryEvent(
+                view.getId(),
+                view.getTitle(),
+                view.getDescription(),
+                Optional.ofNullable(view.getEvents())
+                        .orElse(new ArrayList<>())
+                        .stream()
+                        .map(Event::fromView).collect(Collectors.toList()));
     }
 }

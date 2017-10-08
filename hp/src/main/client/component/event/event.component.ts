@@ -30,10 +30,12 @@ export class EventComponent {
             data: category
         });
 
-        dialogRef.afterClosed().subscribe(result => {
+        dialogRef.afterClosed().subscribe(createdCategoryResult => {
             console.log('The dialog was closed');
-            if (result && result.title) {
-                this.categoryEvents.push(result);
+            if (createdCategoryResult && createdCategoryResult.title) {
+                this.eventService.save(createdCategoryResult).then(savedCategory => {
+                    this.categoryEvents.push(savedCategory);
+                });
             }
         });
     }
