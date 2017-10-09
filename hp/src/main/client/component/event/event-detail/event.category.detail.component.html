@@ -1,0 +1,21 @@
+<div class="category-list">
+    <div>
+        <button md-mini-fab
+                (click)="add()"
+        class = "blue-color">
+            Add
+        </button>
+    </div>
+    <div class="flex">
+        <div class="flex-block"
+             *ngFor="let event of categoryEvent.events">
+            <button
+                    class="category-event-card"
+                    (click)="open(category)"
+                    md-raised-button>
+                <h2>{{event.title}}</h2>
+                <p class="grey-color">{{event.description}}</p>
+            </button>
+        </div>
+    </div>
+</div>

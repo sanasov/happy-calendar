@@ -3,23 +3,26 @@ import {EventService} from "../../service/EventService";
 import {CategoryEvent} from "../../domain/CategoryEvent";
 import {MdDialog} from "@angular/material";
 import {EventCategoryAddDialog} from "./event.category.add.dialog";
+import {Router} from "@angular/router";
 
 @Component({
-    selector: 'app-event',
-    templateUrl: './event.component.html',
+    selector: 'app-event-category',
+    templateUrl: './event.category.component.html',
     styleUrls: ['./event.component.scss']
 })
 export class EventComponent {
     private categoryEvents: Array<CategoryEvent>;
 
-    constructor(private eventService: EventService, private dialog: MdDialog) {
+
+    constructor(private eventService: EventService, private dialog: MdDialog, private router: Router) {
         eventService.categoryEvents().then(categoryEventsResult => {
             this.categoryEvents = categoryEventsResult
         });
     }
 
     open(category: CategoryEvent): void {
-        alert("Open");
+        const EVENT_CATEGORY_ROUTER = "event/";
+        this.router.navigate([EVENT_CATEGORY_ROUTER + '/' + category.id]);
     }
 
     add(): void {

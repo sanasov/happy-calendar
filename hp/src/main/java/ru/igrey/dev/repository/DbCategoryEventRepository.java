@@ -24,6 +24,11 @@ public class DbCategoryEventRepository implements CategoryEventRepository {
     }
 
     @Override
+    public CategoryEvent find(Long id) {
+        return CategoryEvent.fromEntity(dao.select(id));
+    }
+
+    @Override
     public CategoryEvent save(CategoryEvent categoryEvent) {
         CategoryEventEntity savedEntity = categoryEvent.toEntity();
         if (savedEntity.getId() == null) {

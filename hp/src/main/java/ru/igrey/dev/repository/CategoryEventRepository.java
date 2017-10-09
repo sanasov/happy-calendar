@@ -7,5 +7,6 @@ import java.util.List;
 public interface CategoryEventRepository {
 
     List<CategoryEvent> findAll();
+    CategoryEvent find(Long id);
     CategoryEvent save(CategoryEvent event);
 }

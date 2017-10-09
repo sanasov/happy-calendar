@@ -26,6 +26,11 @@ public class EventController {
                 .collect(Collectors.toList());
     }
 
+    @GetMapping("category/{id}")
+    public CategoryEventView findCategoryEvent(@PathVariable("id") Long id) {
+        return categoryEventRepository.find(id).toView();
+    }
+
     @PostMapping("save-category")
     public CategoryEventView saveCategory(@RequestBody CategoryEventView categoryEventView) {
         return categoryEventRepository.save(CategoryEvent.fromView(categoryEventView)).toView();

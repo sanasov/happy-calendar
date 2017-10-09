@@ -17,6 +17,7 @@ export class EventService {
 
     private headers = new Headers({'Content-Type': 'application/json'});
     private GET_ALL_CATEGORIES = 'event/all-categories';
+    private GET_CATEGORY = 'event/category';
     private SAVE_CATEGORY = 'event/save-category';
 
     categoryEvents(): Promise<CategoryEvent[]> {
@@ -34,14 +35,14 @@ export class EventService {
             .catch(this.handleError);
     }
 
-    //
-    // getBike(id: number): Promise<Bike> {
-    //     const url = `${this.bikesUrl}/${id}`;
-    //     return this.http.get(url)
-    //         .toPromise()
-    //         .then(response => response.json().data as Bike)
-    //         .catch(this.handleError);
-    // }
+
+    categoryEvent(id: number): Promise<CategoryEvent> {
+        const url = `${this.GET_CATEGORY}/${id}`;
+        return this.http.get(url)
+            .toPromise()
+            .then(response => response.json())
+            .catch(this.handleError);
+    }
     //
     //
     //
