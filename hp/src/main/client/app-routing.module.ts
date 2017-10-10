@@ -10,12 +10,8 @@ import {EventDetailComponent} from "./component/event/event-detail/event.categor
 const routes: Routes = [
     {path: '', redirectTo: '/', pathMatch: 'full'},
     {path: 'calendar', component: CalendarComponent},
-    {
-        path: 'event', component: EventComponent,
-        children: [
-            {path: ':id', component: EventDetailComponent}
-        ]
-    },
+    {path: 'event', component: EventComponent},
+    {path: 'event-detail/:id', component: EventDetailComponent},
     {path: 'holiday', component: HolidayComponent},
     {path: 'profile', component: ProfileComponent},
 ];

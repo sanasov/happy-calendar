@@ -21,8 +21,8 @@ export class EventComponent {
     }
 
     open(category: CategoryEvent): void {
-        const EVENT_CATEGORY_ROUTER = "event/";
-        this.router.navigate([EVENT_CATEGORY_ROUTER + '/' + category.id]);
+        const EVENT_CATEGORY_DETAIL_ROUTER = "event-detail";
+        this.router.navigate([EVENT_CATEGORY_DETAIL_ROUTER + '/' + category.id]);
     }
 
     add(): void {

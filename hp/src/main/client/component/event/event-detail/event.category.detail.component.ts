@@ -1,22 +1,26 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MdDialog} from "@angular/material";
 import {ActivatedRoute} from "@angular/router";
 import {EventService} from "../../../service/EventService";
 import {CategoryEvent} from "../../../domain/CategoryEvent";
 
 @Component({
-    selector: 'app-event-category-detail',
+    selector: 'app-event-detail',
     templateUrl: './event.category.detail.component.html',
     styleUrls: []
 })
-export class EventDetailComponent {
+export class EventDetailComponent implements OnInit {
 
     private categoryEvent: CategoryEvent;
 
     constructor(private eventService: EventService, private dialog: MdDialog, private activatedRoute: ActivatedRoute) {
+
+    }
+
+    ngOnInit() {
         this.activatedRoute.params.subscribe((params: any) => {
             if (params['id']) {
-                eventService.categoryEvent(params['id']).then(res => this.categoryEvent = res);
+                this.eventService.categoryEvent(params['id']).then(res => this.categoryEvent = res);
             }
         });
     }
